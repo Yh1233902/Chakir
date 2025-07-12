@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Meta Admin</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="login-screen">
+        <h2>🛡️ دخول</h2>
+        <input type="password" id="password" placeholder="كلمة السر">
+        <button onclick="checkPassword()">دخول</button>
+    </div>
+    <div id="main-screen" style="display:none;">
+        <h2>🚀 Facebook Meta Manager</h2>
+        <input type="text" id="linkInput" placeholder="ادخل الرابط">
+        <button onclick="submitLink()">إرسال</button>
+        <div id="responseArea"></div>
+    </div>
+<script src="/static/script.js"></script>
+</body>
+</html>

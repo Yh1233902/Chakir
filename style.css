@@ -1,0 +1,4 @@
+
+body { font-family: Tahoma, sans-serif; text-align:center; background:#f9f9f9; color:#333; }
+input, button { padding:10px; margin:5px; }
+#responseArea { margin-top:20px; background:#fff; padding:15px; border-radius:8px; }
