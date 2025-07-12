@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Login</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        #login { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <button onclick="submitLogin()">Login</button>
+    </div>
+
+    <script>
+    function submitLogin() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        fetch('/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({username, password})
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.success){
+                window.location.href = "/success";
+            } else {
+                alert("Login failed");
+            }
+        });
+    }
+    </script>
+</body>
+</html>
